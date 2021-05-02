@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Tech Quiz</title>
 </head>
 <body>
@@ -12,15 +13,44 @@
     <form id="formquiz">
       <ol>
         <li>
-          <label for="quiz">What is the shortform of HTML</label>
-          <div class="answers d-md-flex">
-            <input type="radio" name="1" id="one">HTML
-            <input type="radio" name="1" id="two">HMLT
-            <input type="radio" name="1" id="three">MLHT
+          <p>What is the shortform of HTML (2mks)</p>
+          <div class="answers d-md-flex flex-column">
+            <div>
+              <input type="radio" name="1" id="one"> HTML
+            </div>
+            <div>
+              <input type="radio" name="1" id="two"> HMLT
+            </div>
+            <div>
+              <input type="radio" name="1" id="three"> MLHT
+            </div>
           </div>
         </li>
-        <li></li>
-        <li></li>
+        <li>
+          <p>What is the other name of javascript (3mks)</p>
+          <div class="answers d-md-flex flex-column">
+            <div>
+              <input type="radio" name="2" id="one"> ECMAscript
+            </div>
+            <div>
+              <input type="radio" name="2" id="two"> JS
+            </div>
+            <div>
+              <input type="radio" name="2" id="three"> i don't Know
+            </div>
+          </div>
+        </li>
+        <li>
+          <p>Is C++ a low level language (3mks)</p>
+          <div class="answers d-md-flex flex-column">
+            <div>
+              <input type="radio" name="3" id="yes"> Yes
+            </div>
+            <div>
+              <input type="radio" name="3" id="no"> No
+            </div>
+          </div>
+        </li>
       </ol>
     </form>
   </div>
