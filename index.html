@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery-3.6.0.js"></script>
@@ -27,45 +28,46 @@
       <form id="formquiz">
         <ol>
           <li>
-            <p>What is the shortform of HTML (2mks)</p>
+            <p>What is the shortform of HTML (2mks) <span id="tick1"></span></p> 
             <div class="answers d-md-flex flex-column">
               <div>
-                <input type="radio" name="1" id="html"> HTML
+                <input type="radio" name="1" id="html" value="HTML"> HTML
               </div>
               <div>
-                <input type="radio" name="1" id="hmlt"> HMLT
+                <input type="radio" name="1" id="hmlt" value="HMLT"> HMLT
               </div>
               <div>
-                <input type="radio" name="1" id="mlht"> MLHT
+                <input type="radio" name="1" id="mlht" value="MLHT"> MLHT
               </div>
             </div>
           </li>
           <li>
-            <p>What is the other name of javascript (3mks)</p>
+            <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
             <div class="answers d-md-flex flex-column">
               <div>
-                <input type="radio" name="2" id="ECMAscript"> ECMAscript
+                <input type="radio" name="2" id="ECMAscript" value="ECMAscript"> ECMAscript
               </div>
               <div>
-                <input type="radio" name="2" id="js"> JS
+                <input type="radio" name="2" id="js" value="js"> JS
               </div>
               <div>
-                <input type="radio" name="2" id="i dont know"> i don't Know
+                <input type="radio" name="2" id="i dont know" value="i dont know"> i don't Know
               </div>
             </div>
           </li>
           <li>
-            <p>Is C++ a low level language (3mks)</p>
+            <p>Is C++ a low level language (3mks) <span id="tick3"></span></p>
             <div class="answers d-md-flex flex-column">
               <div>
-                <input type="radio" name="3" id="yes"> Yes
+                <input type="radio" name="3" id="yes" value="yes"> Yes
               </div>
               <div>
-                <input type="radio" name="3" id="no"> No
+                <input type="radio" name="3" id="no" value="no"> No
               </div>
             </div>
           </li>
         </ol>
+        <input type="submit" value="Submit" class="btn btn-success btn-lg">
       </form>
     </div>
   </div>
