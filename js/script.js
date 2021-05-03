@@ -4,11 +4,11 @@
 let Student = function(fname, sname, scores){
   this.firstname = fname;
   this.surname = sname;
-  this.arrayscores = scores;
+  this.scores = scores;
 }
 
-Student.prototype.fullname = function(){
-  return this.firstname +" "+ this.surname
+Student.prototype.fullName = function(){
+  return this.firstname+" "+ this.surname
 }
 
 let TestScore = function(singlearrays){
@@ -87,7 +87,7 @@ $(document).ready(function () {
       saveObject('student-'+def,newStudent)
 
       $('#finalScore').text(score)
-      
+
       $('#nextStudent').on('click', function(){
         location.reload();
       })
@@ -95,3 +95,17 @@ $(document).ready(function () {
     });
   });
 });
+
+window.onload = function(){
+  for (let i=0; i < localStorage.length; i++){
+    let tosplit = localStorage.key(i).split('-');
+    if (tosplit[0] === 'student'){
+      let one1 = localStorage.key(i);
+      let stude = getObjects(one1);
+      let perScore = ((stude.arrayscores*100)/10)
+      console.log(stude)
+      $("#overall").append("<tr><td>"+(i+1)+"</td><td>"+stude.firstname+" "+stude.surname+"</td><td>"+ perScore+"</td></tr>");
+
+    }
+  }
+}
