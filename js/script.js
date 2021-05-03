@@ -70,6 +70,7 @@ $(document).ready(function(){
       $('#tick3').prepend('<i class="far fa-times"></i>')
     }
 
-    TestScore(examScore)
+
+    $('#finalScore').text(TestScore(examScore))
   });
 });
