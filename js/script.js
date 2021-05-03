@@ -1,10 +1,10 @@
 //business logic
 
 //student name, scores object
-let Student = function(fname, sname){
+let Student = function(fname, sname, scores){
   this.firstname = fname;
   this.surname = sname;
-  this.arrayscores = [];
+  this.arrayscores = scores;
 }
 
 Student.prototype.fullname = function(){
@@ -16,61 +16,82 @@ let TestScore = function(singlearrays){
   singlearrays.forEach(function(singlearray){
     total += singlearray
   })
-  
   return total
 }
 
+let getObjects = function(userkey){
+  return JSON.parse(localStorage.getItem(userkey))
+};
 
-//marks
-//total for each student + merit
+let saveObject = function(userkey, sObject){
+  let tostring = JSON.stringify(sObject);
+  return localStorage.setItem(userkey, tostring)
+};
 
+let def = 0
+window.onload = function(){
+    if (localStorage.length === 0){
+      saveObject('default', def);
+    location.reload();
+  }else{
+    def = localStorage.length
+    $("#submittest").on('click', function(){
+      def += 1
+      saveObject('default', def)
+      // location.reload()
+    })
+  }
+};
 
 //user logic
 
-$(document).ready(function(){
-  $('#takequiz').on('click', function(){
+$(document).ready(function () {
+  $('#takequiz').on('click', function () {
     let fName = $('#firstname').val();
     let sName = $('#surname').val();
 
-    let newStudent = new Student(fName, sName)
-    if(fName && sName){
-      alert(newStudent.fullname())
-    }
-  });
+    $('#formquiz').submit(function (event) {
+      event.preventDefault()
+      let quiz1 = $('input:radio[name=1]:checked').val();
+      let quiz2 = $('input:radio[name=2]:checked').val();
+      let quiz3 = $('input:radio[name=3]:checked').val();
 
-  $('#formquiz').submit(function(event){
-    event.preventDefault()
-    let quiz1 = $('input:radio[name=1]:checked').val();
-    let quiz2 = $('input:radio[name=2]:checked').val();
-    let quiz3 = $('input:radio[name=3]:checked').val();
+      examScore = [];
 
-    examScore=[];
+      if (quiz1 === 'HTML') {
+        examScore.push(2);
+        $('#tick1').prepend('<i class="far fa-check"></i>')
+      } else {
+        examScore.push(0);
+        $('#tick1').prepend('<i class="far fa-times"></i>')
+      }
 
-    if (quiz1 === 'HTML'){
-      examScore.push(2);
-      $('#tick1').prepend('<i class="far fa-check"></i>')
-    }else{
-      examScore.push(0);
-      $('#tick1').prepend('<i class="far fa-times"></i>')
-    }
+      if (quiz2 === 'js') {
+        examScore.push(3);
+        $('#tick2').prepend('<i class="far fa-check"></i>')
+      } else {
+        examScore.push(0);
+        $('#tick2').prepend('<i class="far fa-times"></i>')
+      }
 
-    if (quiz2 === 'js'){
-      examScore.push(3);
-      $('#tick2').prepend('<i class="far fa-check"></i>')
-    }else{
-      examScore.push(0);
-      $('#tick2').prepend('<i class="far fa-times"></i>')
-    }
+      if (quiz3 === 'yes') {
+        examScore.push(3);
+        $('#tick3').prepend('<i class="far fa-check"></i>')
+      } else {
+        examScore.push(0);
+        $('#tick3').prepend('<i class="far fa-times"></i>')
+      }
 
-    if (quiz3 === 'yes'){
-      examScore.push(3);
-      $('#tick3').prepend('<i class="far fa-check"></i>')
-    }else{
-      examScore.push(0);
-      $('#tick3').prepend('<i class="far fa-times"></i>')
-    }
+      let score = TestScore(examScore)
+      let newStudent = new Student(fName, sName, score)
+      saveObject('student-'+def,newStudent)
 
+      $('#finalScore').text(score)
+      
+      $('#nextStudent').on('click', function(){
+        location.reload();
+      })
 
-    $('#finalScore').text(TestScore(examScore))
+    });
   });
 });
