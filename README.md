@@ -40,6 +40,7 @@ To access this project on your local files, you can clone it using these steps
 ## Known Bugs
 
 * Site not 100% Responsive for Screens with a max-width of 370px
+* local storage working after one data entry is entered
 
 ## Technologies Used
 HTML
