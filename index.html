@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery.particleground.js"></script>
@@ -13,23 +15,26 @@
   <script src="js/script.js"></script>
   <title>Tech Quiz</title>
 </head>
+
 <body>
 
   <div id="particles">
     <div id="intro">
       <div class="container">
-        <div class="jumbotron" id="nwstude">
-          <h4>Student Name</h4>
-          <label for="student">Firstname</label>
-          <input type="text" name="student" id="firstname" class="form-control">
-          <label for="student">Surname</label>
-          <input type="text" name="student" id="surname" class="form-control">
-          <div class="text-center row justify-content-md-around">
-            <button class="btn btn-success btn-lg mt-3" id="takequiz">Take Quiz</button>
-            <button class="btn btn-success btn-lg mt-3" id="leaderboard">Leader Board</button>
+        <div class="jumbotron row justify-content-center align-items-center" id="nwstude">
+          <div id="nameSize">
+            <h4>Student Name</h4>
+            <label for="student">Firstname</label>
+            <input type="text" name="student" id="firstname" class="form-control">
+            <label for="student">Surname</label>
+            <input type="text" name="student" id="surname" class="form-control">
+            <div class="text-center row justify-content-md-between">
+              <button class="btn btn-success btn-lg mt-3 mr-3" id="takequiz">Take Quiz</button>
+              <button class="btn btn-success btn-lg mt-3" id="leaderboard">Leader Board</button>
+            </div>
           </div>
         </div>
-  
+
         <div class="questions">
           <div class="forquestion">
             <form id="formquiz">
@@ -74,7 +79,8 @@
                   </div>
                 </li>
                 <li>
-                  <p>Which of the following property is used as the shorthand property for the padding properties? (2mks) <span id="tick4"></span></p>
+                  <p>Which of the following property is used as the shorthand property for the padding properties?
+                    (2mks) <span id="tick4"></span></p>
                   <div class="answers d-md-flex flex-column">
                     <div>
                       <input type="radio" name="4" id="pr" value="pr"> Padding-right
@@ -91,7 +97,8 @@
                   </div>
                 </li>
                 <li>
-                  <p>Which of the following attributes of text box control allow to limit the maximum character? (2mks) <span id="tick5"></span></p>
+                  <p>Which of the following attributes of text box control allow to limit the maximum character? (2mks)
+                    <span id="tick5"></span></p>
                   <div class="answers d-md-flex flex-column">
                     <div>
                       <input type="radio" name="5" id="size" value="size"> size
@@ -117,12 +124,12 @@
 
           <div class="scoreBoard jumbotron mt-3">
             <div class="answers">
-              <p>Your Score is: <span id="finalScore"></span></p>
+              <p>Your Score is: <span id="finalScore"></span>/12</p>
             </div>
           </div>
         </div>
-  
-  
+
+
         <div class="leadBoard">
           <input type="button" value="Go back" class="btn btn-danger btn-md m-3" id="goback">
           <h3 class="text-md-center">Leader Board</h3>
@@ -136,7 +143,7 @@
                 </tr>
               </thead>
               <tbody id="overall">
-  
+
               </tbody>
             </table>
           </div>
@@ -146,4 +153,5 @@
   </div>
 
 </body>
+
 </html>

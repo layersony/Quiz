@@ -48,3 +48,6 @@ body {
   padding: 20px;
   min-height: 550px;
 }
+#nameSize{
+  max-width: 400px;
+}
