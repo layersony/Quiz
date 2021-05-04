@@ -30,81 +30,84 @@
         </div>
   
         <div class="questions">
-          <form id="formquiz">
-            <ol>
-              <li>
-                <p>What is the shortform of HTML (2mks) <span id="tick1"></span></p>
-                <div class="answers d-md-flex flex-column">
-                  <div>
-                    <input type="radio" name="1" id="html" value="HTML"> HTML
+          <div class="forquestion">
+            <form id="formquiz">
+              <ol>
+                <li>
+                  <p>What is the shortform of HTML (2mks) <span id="tick1"></span></p>
+                  <div class="answers d-md-flex flex-column">
+                    <div>
+                      <input type="radio" name="1" id="html" value="HTML"> HTML
+                    </div>
+                    <div>
+                      <input type="radio" name="1" id="hmlt" value="HMLT"> HMLT
+                    </div>
+                    <div>
+                      <input type="radio" name="1" id="mlht" value="MLHT"> MLHT
+                    </div>
                   </div>
-                  <div>
-                    <input type="radio" name="1" id="hmlt" value="HMLT"> HMLT
+                </li>
+                <li>
+                  <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
+                  <div class="answers d-md-flex flex-column">
+                    <div>
+                      <input type="radio" name="2" id="ECMAscript" value="ECMAscript"> ECMAscript
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="js" value="js"> JS
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="i dont know" value="i dont know"> i don't Know
+                    </div>
                   </div>
-                  <div>
-                    <input type="radio" name="1" id="mlht" value="MLHT"> MLHT
+                </li>
+                <li>
+                  <p>Is C++ a low level language (3mks) <span id="tick3"></span></p>
+                  <div class="answers d-md-flex flex-column">
+                    <div>
+                      <input type="radio" name="3" id="yes" value="yes"> Yes
+                    </div>
+                    <div>
+                      <input type="radio" name="3" id="no" value="no"> No
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li>
-                <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
-                <div class="answers d-md-flex flex-column">
-                  <div>
-                    <input type="radio" name="2" id="ECMAscript" value="ECMAscript"> ECMAscript
+                </li>
+                <li>
+                  <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
+                  <div class="answers d-md-flex flex-column">
+                    <div>
+                      <input type="radio" name="2" id="ECMAscript" value=""> ECMAscript
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="js" value=""> JS
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="" value="i dont know"> i don't Know
+                    </div>
                   </div>
-                  <div>
-                    <input type="radio" name="2" id="js" value="js"> JS
+                </li>
+                <li>
+                  <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
+                  <div class="answers d-md-flex flex-column">
+                    <div>
+                      <input type="radio" name="2" id="ECMAscript" value=""> ECMAscript
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="js" value=""> JS
+                    </div>
+                    <div>
+                      <input type="radio" name="2" id="i dont know" value=""> i don't Know
+                    </div>
                   </div>
-                  <div>
-                    <input type="radio" name="2" id="i dont know" value="i dont know"> i don't Know
-                  </div>
-                </div>
-              </li>
-              <li>
-                <p>Is C++ a low level language (3mks) <span id="tick3"></span></p>
-                <div class="answers d-md-flex flex-column">
-                  <div>
-                    <input type="radio" name="3" id="yes" value="yes"> Yes
-                  </div>
-                  <div>
-                    <input type="radio" name="3" id="no" value="no"> No
-                  </div>
-                </div>
-              </li>
-              <li>
-                <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
-                <div class="answers d-md-flex flex-column">
-                  <div>
-                    <input type="radio" name="2" id="ECMAscript" value=""> ECMAscript
-                  </div>
-                  <div>
-                    <input type="radio" name="2" id="js" value=""> JS
-                  </div>
-                  <div>
-                    <input type="radio" name="2" id="" value="i dont know"> i don't Know
-                  </div>
-                </div>
-              </li>
-              <li>
-                <p>What is the other name of javascript (3mks) <span id="tick2"></span></p>
-                <div class="answers d-md-flex flex-column">
-                  <div>
-                    <input type="radio" name="2" id="ECMAscript" value=""> ECMAscript
-                  </div>
-                  <div>
-                    <input type="radio" name="2" id="js" value=""> JS
-                  </div>
-                  <div>
-                    <input type="radio" name="2" id="i dont know" value=""> i don't Know
-                  </div>
-                </div>
-              </li>
-            </ol>
-            <div class="text-md-center">
-              <input type="submit" value="Submit" class="btn btn-success btn-md" id="submittest">
-              <input type="button" value="Next Student" class="btn btn-success" id="nextStudent">
-            </div>
-          </form>
+                </li>
+              </ol>
+              <div class="text-md-center">
+                <input type="submit" value="Submit" class="btn btn-success btn-md" id="submittest">
+                <input type="button" value="Next Student" class="btn btn-success" id="nextStudent">
+              </div>
+            </form>
+          </div>
+
           <div class="scoreBoard jumbotron mt-3">
             <div class="answers">
               <p>Your Score is: <span id="finalScore"></span></p>

@@ -1,6 +1,13 @@
 .questions{
   display: none;
-
+  background-color: beige;
+  text-align: left;
+  padding: 20px 20px 20px 20px;
+  height: 600px;
+}
+.forquestion{
+  overflow-y: auto;
+  height: 380px;
 }
 .leadBoard{
   display: none;
@@ -32,7 +39,7 @@ body {
 #intro {
   position: absolute;
   left: 0;
-  top: 25%;
+  top: 20%;
   padding: 0 20px;
   width: 100%;
   text-align: center;
