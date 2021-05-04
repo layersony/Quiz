@@ -29,70 +29,68 @@ let saveObject = function(userkey, sObject){
 };
 
 let def = 0
-window.onload = function(){
-    if (localStorage.length === 0){
-      saveObject('default', def);
+window.onload = function () {
+  def = localStorage.length
+  if (localStorage.length === 0) {
+    saveObject('default', def);
     location.reload();
-  }else{
+  } else {
     def = localStorage.length
-    $("#submittest").on('click', function(){
+    console.log('hapa siko')
+    $("#submittest").on('click', function () {
       def += 1
       saveObject('default', def)
-      // location.reload()
     })
   }
 };
+
+let correct = ['2|HTML', '3|js', '3|yes']
 
 //user logic
 
 $(document).ready(function () {
   $('#takequiz').on('click', function () {
+
     let fName = $('#firstname').val();
     let sName = $('#surname').val();
+    if (fName && sName) {
+      $('#nwstude').toggle()
+      $('.questions').toggle()
+      $('#formquiz').submit(function (event) {
+        event.preventDefault()
+        let quiz1 = $('input:radio[name=1]:checked').val();
+        let quiz2 = $('input:radio[name=2]:checked').val();
+        let quiz3 = $('input:radio[name=3]:checked').val();
 
-    $('#formquiz').submit(function (event) {
-      event.preventDefault()
-      let quiz1 = $('input:radio[name=1]:checked').val();
-      let quiz2 = $('input:radio[name=2]:checked').val();
-      let quiz3 = $('input:radio[name=3]:checked').val();
+        examScore = [];
+        let vari = [quiz1, quiz2, quiz3]
 
-      examScore = [];
+        correct.forEach(function (corr, i) {
+          let item = corr.split('|');
+          if (vari[i] === item[1]) {
+            examScore.push(parseInt(item[0]))
+            $('#tick' + (i + 1)).prepend('<i class="far fa-check"></i>')
+          } else {
+            examScore.push(0);
+            $('#tick' + (i + 1)).prepend('<i class="far fa-times"></i>')
+          }
+        })
 
-      if (quiz1 === 'HTML') {
-        examScore.push(2);
-        $('#tick1').prepend('<i class="far fa-check"></i>')
-      } else {
-        examScore.push(0);
-        $('#tick1').prepend('<i class="far fa-times"></i>')
-      }
+        let score = TestScore(examScore)
+        let newStudent = new Student(fName, sName, score)
+        saveObject('student-' + def, newStudent)
 
-      if (quiz2 === 'js') {
-        examScore.push(3);
-        $('#tick2').prepend('<i class="far fa-check"></i>')
-      } else {
-        examScore.push(0);
-        $('#tick2').prepend('<i class="far fa-times"></i>')
-      }
+        $('#finalScore').text(score)
 
-      if (quiz3 === 'yes') {
-        examScore.push(3);
-        $('#tick3').prepend('<i class="far fa-check"></i>')
-      } else {
-        examScore.push(0);
-        $('#tick3').prepend('<i class="far fa-times"></i>')
-      }
+        $('#nextStudent').on('click', function () {
+          location.reload();
+          def += 1
+        })
 
-      let score = TestScore(examScore)
-      let newStudent = new Student(fName, sName, score)
-      saveObject('student-'+def,newStudent)
-
-      $('#finalScore').text(score)
-
-      $('#nextStudent').on('click', function(){
-        location.reload();
-      })
-
-    });
+      });
+    }else{
+      alert('Please Enter your Full Name')
+    }
   });
 });
 
@@ -102,10 +100,17 @@ window.onload = function(){
     if (tosplit[0] === 'student'){
       let one1 = localStorage.key(i);
       let stude = getObjects(one1);
-      let perScore = ((stude.arrayscores*100)/10)
-      console.log(stude)
+      let perScore = ((stude.scores*100)/10)
       $("#overall").append("<tr><td>"+(i+1)+"</td><td>"+stude.firstname+" "+stude.surname+"</td><td>"+ perScore+"</td></tr>");
-
     }
   }
 }
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   particleground(document.getElementById('particles'), {
+//     dotColor: '#fff',
+//     lineColor: '#fff'
+//   });
+//   var intro = document.getElementById('intro');
+//   intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+// }, false);
