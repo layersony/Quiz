@@ -1,9 +1,10 @@
 .questions{
   display: none;
-  background-color: beige;
+  background-color: white;
   text-align: left;
   padding: 20px 20px 20px 20px;
   height: 600px;
+  border-radius: 10px;
 }
 .forquestion{
   overflow-y: auto;

@@ -44,7 +44,7 @@ window.onload = function () {
   }
 };
 
-let correct = ['2|HTML', '3|js', '3|yes']
+let correct = ['2|HTML', '3|js', '3|yes', '2|p', '2|ml']
 
 //user logic
 
@@ -61,9 +61,11 @@ $(document).ready(function () {
         let quiz1 = $('input:radio[name=1]:checked').val();
         let quiz2 = $('input:radio[name=2]:checked').val();
         let quiz3 = $('input:radio[name=3]:checked').val();
+        let quiz4 = $('input:radio[name=4]:checked').val();
+        let quiz5 = $('input:radio[name=5]:checked').val();
 
         examScore = [];
-        let vari = [quiz1, quiz2, quiz3]
+        let vari = [quiz1, quiz2, quiz3, quiz4, quiz5]
 
         correct.forEach(function (corr, i) {
           let item = corr.split('|');
@@ -100,7 +102,7 @@ window.onload = function(){
     if (tosplit[0] === 'student'){
       let one1 = localStorage.key(i);
       let stude = getObjects(one1);
-      let perScore = ((stude.scores*100)/10)
+      let perScore = ((stude.scores*100)/12)
       $("#overall").append("<tr><td>"+(i+1)+"</td><td>"+stude.firstname+" "+stude.surname+"</td><td>"+ perScore+"</td></tr>");
     }
   }
