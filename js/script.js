@@ -94,6 +94,15 @@ $(document).ready(function () {
       alert('Please Enter your Full Name')
     }
   });
+  $('#leaderboard').on('click', function(){
+    $('#nwstude').toggle()
+    $('.leadBoard').toggle();
+  });
+
+  $('#goback').on('click', function(){
+    $('.leadBoard').toggle();
+    $('#nwstude').toggle()
+  })
 });
 
 window.onload = function(){
@@ -102,7 +111,7 @@ window.onload = function(){
     if (tosplit[0] === 'student'){
       let one1 = localStorage.key(i);
       let stude = getObjects(one1);
-      let perScore = ((stude.scores*100)/12)
+      let perScore = Math.floor((stude.scores*100)/12)
       $("#overall").append("<tr><td>"+(i+1)+"</td><td>"+stude.firstname+" "+stude.surname+"</td><td>"+ perScore+"</td></tr>");
     }
   }
