@@ -12,7 +12,7 @@ Create a Website that Students can take a test and and see their final overral s
 ## Access the website
 Need the latest browser to be able to View
 
-Follow this link --> 
+Follow this link --> https://layersony.github.io/Quiz/
 
 It is hosted by github.
 
